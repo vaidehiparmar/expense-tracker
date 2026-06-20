@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+<div id="login-page" class="login-page">
+    <div class="login-box">
+        <h1 class="login-title">Expense Tracker</h1>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button type="button" onclick="login()">Login</button>
+    </div>
+</div>
+
+
+<!-- ================= MAIN APP ================= -->
+<div class="container" id="app" style="display:none;">
+
+    <!-- TITLE -->
+    <h1 style="text-align:center; margin-bottom:20px;">
+        💰 Expense Tracker 💰
+    </h1>
+
+    <!-- 🔥 NEW FILTER BOX (LEFT SIDE SMALL) -->
+    <div class="filter-box">
+        <h4>Filter</h4>
+
+        <select id="month">
+            <option value="all">All Months</option>
+            <option value="01">Jan</option>
+            <option value="02">Feb</option>
+            <option value="03">Mar</option>
+            <option value="04">Apr</option>
+            <option value="05">May</option>
+            <option value="06">Jun</option>
+            <option value="07">Jul</option>
+            <option value="08">Aug</option>
+            <option value="09">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+        </select>
+
+        <select id="year">
+            <option value="all">All Years</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+        </select>
+    </div>
+
+    <!-- 🔥 SUMMARY -->
+    <div class="summary">
+
+        <div class="income">
+            <h3>Income</h3>
+            <p id="money-plus">₹0</p>
+        </div>
+
+        <div class="expense">
+            <h3>Expense</h3>
+            <p id="money-minus">₹0</p>
+        </div>
+
+        <!-- 🔥 NEW BALANCE BOX -->
+        <div class="balance-box">
+            <h3>Balance</h3>
+            <h2 id="balance">₹0</h2>
+        </div>
+
+    </div>
+   
+    <!-- SMART INSIGHTS -->
+<div class="insight-box" id="insight-box">
+    💡 Insights will appear here
+</div>
+
+<!-- COMPARISON CARD -->
+<div class="summary" style="margin-top:15px;">
+    <div class="balance-box">
+        <h3>Current vs Last Month</h3>
+        <p id="comparison">Loading...</p>
+    </div>
+
+    <div class="balance-box">
+        <h3>Highest Expense Category</h3>
+        <p id="highest-category">Loading...</p>
+    </div>
+
+    <div class="balance-box">
+        <h3>Top Spending Month</h3>
+        <p id="top-month">Loading...</p>
+    </div>
+</div>
+    <!-- MAIN SECTION -->
+   
+    <div class="main">
+        <div class="left">
+            <h3>Income</h3>
+            <ul id="income-list"></ul>
+
+            <h3>Expense</h3>
+            <ul id="expense-list"></ul>
+        </div>
+
+        <div class="right">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="form">
+        <input id="text" placeholder="Description (e.g. Pizza / Salary)" required>
+        <input id="amount" type="text" inputmode="numeric" placeholder="Amount (+income / -expense)" required>
+        <select id="category">
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Education">Education</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Salary">Salary</option>
+            <option value="Business">Business</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Add</button>
+    </form>
+
+</div>
+
+<!-- ✅ LOGOUT BUTTON (OUTSIDE CONTAINER) -->
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<script src="script.js"></script>
+</body>
+</html>
