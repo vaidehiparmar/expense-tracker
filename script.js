@@ -234,7 +234,7 @@ try {
     );
 
     const compareData = await compareRes.json();
-
+console.log(compareData);
     if (comparisonBox) {
 
         if (compareData.difference > 0) {
