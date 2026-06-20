@@ -263,6 +263,7 @@ drawChart(income, Math.abs(expense));
 
 }
 // ================= ADD  =================
+if (form) {
 form.addEventListener("submit", async (e) => {
     
     e.preventDefault();
@@ -314,6 +315,7 @@ category.value = "Food";
 
 loadData();
 });
+}
 
 // ================= DELETE =================
 async function deleteItem(id) {
