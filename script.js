@@ -229,9 +229,9 @@ if (insightBox) {
 
 try {
 
-    const compareRes = await fetch(
-        `http://127.0.0.1:5000/month-comparison?month=${selectedMonth}&year=${selectedYear}`
-    );
+   const compareRes = await fetch(
+    `/month-comparison?month=${selectedMonth}&year=${selectedYear}`
+);
 
     const compareData = await compareRes.json();
 console.log(compareData);
