@@ -227,31 +227,34 @@ if (insightBox) {
 
 // ================= MONTH COMPARISON =================
 
+
 try {
 
-   const compareRes = await fetch(
-    `/month-comparison?month=${selectedMonth}&year=${selectedYear}`
-);
+    console.log("COMPARISON START");
+
+    const compareRes = await fetch(
+        `/month-comparison?month=${selectedMonth}&year=${selectedYear}`
+    );
 
     const compareData = await compareRes.json();
-console.log(compareData);
+
+    console.log("COMPARE DATA", compareData);
+
     if (comparisonBox) {
 
-        if (compareData.difference > 0) {
+        console.log("COMPARISON BOX FOUND");
 
+        if (compareData.difference > 0) {
             comparisonBox.innerText =
                 `📈 ₹${compareData.difference} more spent than last month`;
 
         } else if (compareData.difference < 0) {
-
             comparisonBox.innerText =
                 `🎉 ₹${Math.abs(compareData.difference)} less spent than last month`;
 
         } else {
-
             comparisonBox.innerText =
                 `😎 Same spending as last month`;
-
         }
     }
 
